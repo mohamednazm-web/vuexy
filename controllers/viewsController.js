@@ -11,60 +11,7 @@ const Vedios = require('../models/vedioModel');
 const ITEMS_PER_PAGE = 8;
 
 exports.products = catchAsync(async (req, res) => {
-  const homePageViews = await Allviews.updateOne({
-    $inc: { homePageHasView: 1 }
-  });
-  console.log(homePageViews);
-  const i18n = res.setLocale(req.cookies.i18n);
-
-  const banners = await Banners.find({})
-    .sort({ _id: -1 })
-    .limit(3);
-
-  const bannerBottoms = await BannerBottom.find()
-    .sort({ _id: -1 })
-    .limit(3);
-
-  const videos = await Vedios.find()
-    .sort({ _id: -1 })
-    .limit(4);
-
-  let carBeautifings;
-  const carBeautifingCategorey = await Categories.find({
-    name: { $eq: 'carBeautifing' }
-  }).populate('products');
-  carBeautifingCategorey.forEach(function(categorey) {
-    carBeautifings = categorey.products.reverse().slice(0, 20);
-  });
-
-  let carSales;
-  const carSaleCategorey = await Categories.find({
-    name: { $eq: 'carSales' }
-  }).populate('products');
-  carSaleCategorey.forEach(function(categorey) {
-    carSales = categorey.products.reverse().slice(0, 5);
-  });
-
-  let suppliers;
-  const supplierCategorey = await Categories.find({
-    name: { $eq: 'suppliers' }
-  }).populate('products');
-  supplierCategorey.forEach(function(categorey) {
-    suppliers = categorey.products.reverse().slice(0, 5);
-  });
-
-  res.status(200).render('pages/index', {
-    carBeautifings: carBeautifings,
-    carSales: carSales,
-    suppliers: suppliers,
-    banners: banners,
-    videos,
-    bannerBottoms: bannerBottoms,
-    i18n: res,
-    successMessageTicket: req.flash('successMessageTicket'),
-    totalPriceMessage: req.flash('totalPriceMessage'),
-    selectedI18n: i18n
-  });
+  res.status(200).send({ message: 'api for vuexy' });
 });
 
 exports.adminDashboard = catchAsync(async (req, res, next) => {
