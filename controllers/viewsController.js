@@ -68,47 +68,8 @@ exports.products = catchAsync(async (req, res) => {
 });
 
 exports.adminDashboard = catchAsync(async (req, res, next) => {
-  const i18n = res.setLocale(req.cookies.i18n);
-  console.log(i18n);
-  const totalNumOfTicket = await Ticket.find().countDocuments();
-
-  const totalNumContacts = await Ticket.find().countDocuments();
-
-  const totalNumOneWay = await Ticket.find({
-    flyingType: { $eq: 0 }
-  }).countDocuments();
-
-  const totalNumReturn = await Ticket.find({
-    flyingType: { $eq: 1 }
-  }).countDocuments();
-
-  const totalNumCarBeautifing = await Ticket.find({
-    categories: { $eq: '60e21f9a5e082a12c8dc13ea' }
-  }).countDocuments();
-
-  const totalNumSuppliers = await Ticket.find({
-    categories: { $eq: '60e21f9a5e082a12c8dc13eb' }
-  }).countDocuments();
-
-  let finalResViews = 0;
-  await Allviews.find().then(res => {
-    finalResViews = res[0].homePageHasView;
-  });
-
-  finalResViews = Math.trunc(finalResViews / 2);
-
   // SEND RESPONSE
-  res.status(200).render('pages/dashboard', {
-    totalNumOfTicket,
-    totalNumOneWay,
-    totalNumReturn,
-    finalResViews,
-    totalNumContacts,
-    totalNumCarBeautifing,
-    totalNumSuppliers,
-    i18n: res,
-    selectedI18n: i18n
-  });
+  res.status(200).send({ message: 'api for vuexy' });
 });
 
 exports.carSales = catchAsync(async (req, res, next) => {
