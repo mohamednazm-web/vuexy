@@ -11,12 +11,104 @@ const Vedios = require('../models/vedioModel');
 const ITEMS_PER_PAGE = 8;
 
 exports.products = catchAsync(async (req, res) => {
-  res.status(200).send({ message: 'api for vuexy' });
+  const homePageViews = await Allviews.updateOne({
+    $inc: { homePageHasView: 1 }
+  });
+  console.log(homePageViews);
+  const i18n = res.setLocale(req.cookies.i18n);
+
+  const banners = await Banners.find({})
+    .sort({ _id: -1 })
+    .limit(3);
+
+  const bannerBottoms = await BannerBottom.find()
+    .sort({ _id: -1 })
+    .limit(3);
+
+  const videos = await Vedios.find()
+    .sort({ _id: -1 })
+    .limit(4);
+
+  let carBeautifings;
+  const carBeautifingCategorey = await Categories.find({
+    name: { $eq: 'carBeautifing' }
+  }).populate('products');
+  carBeautifingCategorey.forEach(function(categorey) {
+    carBeautifings = categorey.products.reverse().slice(0, 20);
+  });
+
+  let carSales;
+  const carSaleCategorey = await Categories.find({
+    name: { $eq: 'carSales' }
+  }).populate('products');
+  carSaleCategorey.forEach(function(categorey) {
+    carSales = categorey.products.reverse().slice(0, 5);
+  });
+
+  let suppliers;
+  const supplierCategorey = await Categories.find({
+    name: { $eq: 'suppliers' }
+  }).populate('products');
+  supplierCategorey.forEach(function(categorey) {
+    suppliers = categorey.products.reverse().slice(0, 5);
+  });
+
+  res.status(200).render('pages/index', {
+    carBeautifings: carBeautifings,
+    carSales: carSales,
+    suppliers: suppliers,
+    banners: banners,
+    videos,
+    bannerBottoms: bannerBottoms,
+    i18n: res,
+    successMessageTicket: req.flash('successMessageTicket'),
+    totalPriceMessage: req.flash('totalPriceMessage'),
+    selectedI18n: i18n
+  });
 });
 
 exports.adminDashboard = catchAsync(async (req, res, next) => {
+  const i18n = res.setLocale(req.cookies.i18n);
+  console.log(i18n);
+  const totalNumOfTicket = await Ticket.find().countDocuments();
+
+  const totalNumContacts = await Ticket.find().countDocuments();
+
+  const totalNumOneWay = await Ticket.find({
+    flyingType: { $eq: 0 }
+  }).countDocuments();
+
+  const totalNumReturn = await Ticket.find({
+    flyingType: { $eq: 1 }
+  }).countDocuments();
+
+  const totalNumCarBeautifing = await Ticket.find({
+    categories: { $eq: '60e21f9a5e082a12c8dc13ea' }
+  }).countDocuments();
+
+  const totalNumSuppliers = await Ticket.find({
+    categories: { $eq: '60e21f9a5e082a12c8dc13eb' }
+  }).countDocuments();
+
+  let finalResViews = 0;
+  await Allviews.find().then(res => {
+    finalResViews = res[0].homePageHasView;
+  });
+
+  finalResViews = Math.trunc(finalResViews / 2);
+
   // SEND RESPONSE
-  res.status(200).send({ message: 'api for vuexy' });
+  res.status(200).render('pages/dashboard', {
+    totalNumOfTicket,
+    totalNumOneWay,
+    totalNumReturn,
+    finalResViews,
+    totalNumContacts,
+    totalNumCarBeautifing,
+    totalNumSuppliers,
+    i18n: res,
+    selectedI18n: i18n
+  });
 });
 
 exports.carSales = catchAsync(async (req, res, next) => {
