@@ -1,0 +1,366 @@
+<section class="hero-wrapper hero-wrapper6">
+    <div class="hero-box hero-bg-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hero-content">
+                        <div class="section-heading">
+                            <h2 class="sec__title cd-headline slide d-flex align-items-center">
+                                <span class="cd-words-wrapper pl-2">
+                            <b class="is-visible"><%= i18n.__("London to Erbil")%>
+                            </b>
+                            <b style="font-weight: bold;"><%= i18n.__("London to Sulymaniah")%></b>
+                            <b><%= i18n.__("Manchester to Erbil")%></b>
+
+                            <b><%= i18n.__("Manchester to Sulymaniah")%></b>
+                            <b> <%= i18n.__("Birmingham to Erbil")%>
+                            </b>
+
+                            <b><%= i18n.__("Birmingham to Sulymaniah")%>
+                            </b>
+                            </span>
+                            </h2>
+                        </div>
+                    </div>
+                    <!-- end hero-content -->
+                </div>
+                <!-- end col-lg-12 -->
+            </div>
+            <!-- end row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <% if (successMessageTicket.length > 0) { %>
+                        <div class="alert alert-success" style="font-size: 2rem; text-align: center;">
+                            <%= successMessageTicket %>
+                        </div>
+                        <div class="alert alert-success" style="font-size: 2rem; text-align: center;">
+                            Total Price : $
+                            <%= totalPriceMessage %>
+                        </div>
+                        <% } %>
+                            <div class="search-fields-container mt-4">
+                                <div class="section-tab section-tab-2 pb-3">
+                                    <ul class="nav nav-tabs" id="myTab3" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="one-way-tab" data-toggle="tab" href="#one-way" role="tab" aria-controls="one-way" aria-selected="true">
+                                                <%= i18n.__("One way")%>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="round-trip-tab" data-toggle="tab" href="#multi-city" role="tab" aria-controls="round-trip" aria-selected="false">
+                                                <%= i18n.__("Return")%>
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- end section-tab -->
+
+                                <div class="tab-content" id="myTabContent3">
+                                    <div class="tab-pane fade show active" id="one-way" role="tabpanel" aria-labelledby="one-way-tab">
+                                        <div class="contact-form-action">
+                                            <form action="/api/v1/ticket" method="post" enctype="multipart/form-data" class="row align-items-center">
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <div class="form-group">
+                                                            <div class="select-contain select-contain-shadow w-auto">
+                                                                <label class="label-text"><%= i18n.__("Flying")%></label>
+                                                                <select name="country" class="select-contain-select">
+                                                            <option value="Manchester to Erbil"><%= i18n.__("Manchester")%><span>&rarr;</span> <%= i18n.__("Erbil")%></option>
+                                                            <option value="Manchester to Sulymaniah"><%= i18n.__("London")%><span>&rarr;</span> <%= i18n.__("Sulymaniah")%></option>
+                                                            <option value="London to Erbil"><%= i18n.__("Manchester")%><span>&rarr;</span> <%= i18n.__("Erbil")%></option>
+                                                            <option value="London to Sulymaniah"><%= i18n.__("Manchester")%><span>&rarr;</span> <%= i18n.__("Sulymaniah")%></option>
+                                                            <option value="Bermingham to Erbil"><%= i18n.__("Bermingham")%><span>&rarr;</span> <%= i18n.__("Erbil")%></option>
+                                                            <option value="Bermingham to Sulymaniah"><%= i18n.__("Bermingham")%> <span>&rarr;</span> <%= i18n.__("Sulymaniah")%></option>
+                                                        </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end col-lg-3 -->
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <label class="label-text"><%= i18n.__("Departure date:")%></label>
+                                                        <div class="form-group">
+                                                            <span class="la la-calendar form-icon"></span>
+                                                            <input class="date-picker-single form-control" type="text" name="departureDate" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <label class="label-text"><%= i18n.__("First and last Name")%></label>
+                                                        <div class="form-group">
+                                                            <input class="form-control" type="text" name="name" placeholder="First and last Name">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <label class="label-text"><%= i18n.__("Date of Birth")%></label>
+                                                        <div class="form-group">
+                                                            <span class="la la-calendar form-icon"></span>
+                                                            <input class="date-picker-single form-control" type="text" name="DateOfBirth" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <label class="label-text"><%= i18n.__("phone")%></label>
+                                                        <div class="form-group">
+                                                            <span class="la la-phone form-icon"></span>
+                                                            <input class="form-control" type="text" name="phone" required placeholder="phone">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <label class="label-text"><%= i18n.__("Email")%></label>
+                                                        <div class="form-group">
+                                                            <span class="la la-envelope form-icon"></span>
+                                                            <input class="form-control" type="text" name="email" required placeholder="Email">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- hidden input -->
+                                                <input type="hidden" name="flyingType" value="0">
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <div class="form-group">
+                                                            <div class="select-contain select-contain-shadow w-auto">
+                                                                <label class="label-text"><%= i18n.__("Adult")%></label>
+                                                                <select name="adult" class="select-contain-select">
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end col-lg-3 -->
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <div class="form-group">
+                                                            <div class="select-contain select-contain-shadow w-auto">
+                                                                <label class="label-text"><%= i18n.__("Child")%></label>
+                                                                <select name="child" class="select-contain-select">
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <div class="form-group">
+                                                            <div class="select-contain select-contain-shadow w-auto">
+                                                                <label class="label-text"><%= i18n.__("Infants")%></label>
+                                                                <select name="infants" class="select-contain-select">
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end col-lg-3 -->
+
+                                                <div class="col-lg-3">
+                                                    <button class="theme-btn w-100 text-center margin-top-20px"><%= i18n.__("submit")%></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- end tab-pane -->
+
+                                    <div class="tab-pane fade multi-flight-wrap" id="multi-city" role="tabpanel" aria-labelledby="multi-city-tab">
+                                        <div class="contact-form-action">
+                                            <form action="/api/v1/ticket" method="post" enctype="multipart/form-data" class="row align-items-center">
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <div class="form-group">
+                                                            <div class="select-contain select-contain-shadow w-auto">
+                                                                <label class="label-text"><%= i18n.__("Flying")%></label>
+                                                                <select name="country" class="select-contain-select">
+                                                                    <option value="Manchester to London"><%= i18n.__("London")%><span>&rarr;</span> <%= i18n.__("Erbil")%></option>
+                                                                    <option value="Manchester to Sulymaniah"><%= i18n.__("London")%><span>&rarr;</span> <%= i18n.__("Sulymaniah")%></option>
+                                                                    <option value="London to Erbil"><%= i18n.__("Manchester")%><span>&rarr;</span> <%= i18n.__("Erbil")%></option>
+                                                                    <option value="London to Sulymaniah"><%= i18n.__("Manchester")%><span>&rarr;</span> <%= i18n.__("Sulymaniah")%></option>
+                                                                    <option value="Bermingham to Erbil"><%= i18n.__("Bermingham")%><span>&rarr;</span> <%= i18n.__("Erbil")%></option>
+                                                                    <option value="Bermingham to Sulymaniah"><%= i18n.__("Bermingham")%> <span>&rarr;</span> <%= i18n.__("Sulymaniah")%></option>
+                                                        </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end col-lg-3 -->
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <label class="label-text"><%= i18n.__("Departure date:")%></label>
+                                                        <div class="form-group">
+                                                            <span class="la la-calendar form-icon"></span>
+                                                            <input class="date-picker-single form-control" type="text" name="departureDate" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <label class="label-text"><%= i18n.__("Return date:")%></label>
+                                                        <div class="form-group">
+                                                            <span class="la la-calendar form-icon"></span>
+                                                            <input class="date-picker-single form-control" type="text" name="returnDate" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <label class="label-text"><%= i18n.__("First and last Name")%></label>
+                                                        <div class="form-group">
+                                                            <input class="form-control" type="text" name="name" placeholder="First and last Name">>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <label class="label-text"><%= i18n.__("Date of Birth")%></label>
+                                                        <div class="form-group">
+                                                            <span class="la la-calendar form-icon"></span>
+                                                            <input class="date-picker-single form-control" type="text" name="DateOfBirth" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <label class="label-text"><%= i18n.__("phone")%></label>
+                                                        <div class="form-group">
+                                                            <span class="la la-phone form-icon"></span>
+                                                            <input class="form-control" type="text" name="phone" required placeholder="phone">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <label class="label-text"><%= i18n.__("Email")%></label>
+                                                        <div class="form-group">
+                                                            <span class="la la-envelope form-icon"></span>
+                                                            <input class="form-control" type="text" name="email" required placeholder="Email">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- START hidden input -->
+                                                <input type="hidden" name="flyingType" value="1">
+                                                <!-- END hidden input -->
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <div class="form-group">
+                                                            <div class="select-contain select-contain-shadow w-auto">
+                                                                <label class="label-text"><%= i18n.__("Adult")%></label>
+                                                                <select name="adult" class="select-contain-select">
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end col-lg-3 -->
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <div class="form-group">
+                                                            <div class="select-contain select-contain-shadow w-auto">
+                                                                <label class="label-text"><%= i18n.__("Child")%></label>
+                                                                <select name="child" class="select-contain-select">
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 pr-0">
+                                                    <div class="input-box">
+                                                        <div class="form-group">
+                                                            <div class="select-contain select-contain-shadow w-auto">
+                                                                <label class="label-text"><%= i18n.__("Infants")%></label>
+                                                                <select name="infants" class="select-contain-select">
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end col-lg-3 -->
+
+                                                <div class="col-lg-3">
+                                                    <button class="theme-btn w-100 text-center margin-top-20px"><%= i18n.__("submit")%></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- end tab-pane -->
+                                </div>
+                            </div>
+                            <!-- end main-search-input -->
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+        <svg class="hero-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+        <path d="M761.9,40.6L643.1,24L333.9,93.8L0.1,1H0v99h1000V1"></path>
+    </svg>
+    </div>
+</section>
+<!-- end hero-wrapper -->

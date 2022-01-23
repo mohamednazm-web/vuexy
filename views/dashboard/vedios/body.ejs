@@ -1,0 +1,89 @@
+<div class="wrapper">
+    <!-- Navbar Start -->
+    <%- include('../partials/header'); %>
+        <%- include('../partials/Language.ejs'); %>
+            <!-- Navbar End -->
+
+            <!-- Main Container Start -->
+            <main class="main--container">
+                <!-- Main Content Start -->
+                <section class="main--content">
+                    <div class="panel">
+                        <!-- Records Header Start -->
+                          <div class="records--header">
+                        <!-- <div class="actions">
+                            <form action="#" class="search flex-wrap flex-md-nowrap">
+                                <input type="text" class="form-control" placeholder="Product Name..." required>
+                                <select name="select" class="form-control">
+                                    <option value="" selected>PIKAB</option>
+                                    <option value="" selected>MARZYA</option>
+                                    <option value="" selected>WANAWSHA</option>
+                                    <option value="" selected>QAMARA</option>
+                                </select>
+                                <button type="submit" class="btn btn-rounded"><i class="fa fa-search"></i></button>
+                            </form>
+-->
+                            <a href="/admin_dashboard/add-product-vedio"
+                                class="addProduct btn btn-lg btn-rounded btn-warning"><%= i18n.__("Add Product")%></a>
+                        <!-- </div>  -->
+                    </div> 
+                        <!-- Records Header End -->
+                    </div>
+                    <div class="panel">
+                        <!-- Records List Start -->
+                        <div class="records--list" data-title="Product Listing">
+                            <table id="recordsListView">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <%= i18n.__("title")%>
+                                        </th>
+                                        <th>
+                                            <%= i18n.__("picture")%>
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% vedios.forEach(function(product) { %>
+                                        <tr>
+                                            <td>
+                                                <%= product.title %>
+                                            </td>
+                                            <td>
+                                                <img class="img-fluid" src="/<%= product.image %>" alt="" />
+                                            </td>
+                                            <td>
+                                                <div class="Editand">
+                                                    <span><a href="/admin_dashboard/update-product-vedio/<%=product._id%>"
+                                                            class="label label-info ED">
+                                                            <%= i18n.__("Edit")%>
+                                                        </a></span>
+                                                    &ThinSpace;
+                                                    &ThinSpace;
+                                                    <form action="/admin_dashboard/delete-vedio" method="POST"
+                                                        onclick="return confirm('ئایا دڵنیایی لە سڕینەوەی؟');">
+                                                        <input type="hidden" value="<%= product._id %>"
+                                                            name="productId">
+                                                        <button type="submit" class="label label-danger ED">
+                                                            <%= i18n.__("Delete")%>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+                        </td>
+                        <td>
+                            <a href="#" class="btn-link"></a>
+                            <!-- Records List End -->
+                            <%- include('../../partials/pagination'); %>
+                    </div>
+                </section>
+            </main>
+            <!-- Main Container End -->
+</div>
+<!-- Wrapper End -->

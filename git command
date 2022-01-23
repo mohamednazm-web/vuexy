@@ -1,0 +1,8 @@
+git add .
+git commit -m 'test1'
+git push production master
+
+
+git add .
+git commit -m "changes"
+git push origin master

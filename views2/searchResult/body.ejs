@@ -1,0 +1,67 @@
+<%- include('../partials/header'); %>
+    <div class="best-seller-products-area sm-top">
+        <div class="container container-wide">
+            <div class="row">
+                <div class="col-lg-5 m-auto text-center">
+                    <div class="section-title">
+                        <% if(locals.searchFor) {%>
+                            <% if(allProducts.length > 0) {%>
+                                <h2 class="h3">
+                                    <%= i18n.__("THE SEARCH RESULT OF")%>
+                                        <span style="color: red; opacity: .7;">
+                                        <%= searchFor%>
+                                    </span>
+                                </h2>
+                                <% } else {%>
+                                    <h2 class="h3">
+                                        <%= i18n.__("THE SEARCH RESULT OF")%>
+                                            <div style="color: red; opacity: .7;text-decoration: underline; ">
+                                                <%= searchFor%>
+                                            </div>
+                                            <div>
+                                                <%= i18n.__("NOT FOUND")%>
+                                            </div>
+                                    </h2>
+                                    <% } %>
+                                        <% }%>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-wrapper">
+                        <div class="product-carousel">
+                            <!-- Start Product Item -->
+                            <% allProducts.forEach(function(product) { %>
+                                <div class="product-item">
+                                    <div class="product-item__thumb">
+                                        <a href="/allSingleProducts?id=<%= product._id %>">
+                                            <img class="thumb-primary" src="/<%= product.image[0] %>" alt="Product" />
+                                        </a>
+                                    </div>
+                                    <div class="product-item__content">
+                                        <h4 class="title">
+                                            <a href="/allSingleProducts?id=<%= product._id %>">
+                                                <% if(locals.selectedI18n==='ku') {%>
+                                                    <%= product.productName %>
+                                                        <% } else if(locals.selectedI18n==='ar'){%>
+                                                            <%= product.productNameArabic %>
+                                                                <% } else {%>
+                                                                    <%= product.productNameEnglish %>
+                                                                        <% } %>
+                                            </a>
+                                        </h4>
+                                        <span class="price"><strong>Price:</strong>
+                                            $<%= product.price %>
+                                        </span>
+                                    </div>
+                                </div>
+                                <% }); %>
+                                    <!-- End Product Item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--== End Page Content Wrapper ==-->
+        <%- include('../partials/footer'); %>

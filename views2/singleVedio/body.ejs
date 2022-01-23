@@ -1,0 +1,31 @@
+<%- include('../partials/header'); %>
+
+
+    <div class="col-lg-5" style="margin: 1rem auto;
+padding: 2rem;">
+        <div class="about-thumb video-play mb-sm-30">
+            <img src="/<%= product[0].image %>" alt="About" />
+            <a href="<%= product[0].vedio %>" class="btn-video-popup"><i
+                class="ion-play"></i></a>
+            <h4 lang="ar" dir="rtl" style="text-align: center; margin-top: 7px;">
+                <a class="vedio_title" href="#">
+                    <% if(locals.selectedI18n==='ku') {%>
+                        <%= product[0].title %>
+                            <% } else if(locals.selectedI18n==='ar'){%>
+                                <%= product[0].titleArabic %>
+                                    <% } else {%>
+                                        <%= product[0].titleEnglish %>
+                                            <% } %>
+                </a>
+            </h4>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <%- include('../partials/footer'); %>

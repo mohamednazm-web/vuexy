@@ -1,0 +1,21 @@
+{
+    "products":{
+       " product-name":"ناوی بەرهەەم",
+        "catgery":"جۆری بەرهەم",
+        "Add-product":"زیادکردنی بەرهەەم",
+        "product-list":"لیستی بەرهەمەکان",
+        "kurdish":"کوردی",
+        "Arabic":"عەرەبی",
+        "Edit":"دەستکاری",
+        "Delete":"سڕینەوە",
+        "Next":"دواتر",
+        "previous":"پێشتر"
+    },
+    "AddProducts":{
+     "Add-product":"زیادکردنی بەرهەم"
+
+
+
+    }
+}
+    

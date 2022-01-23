@@ -1,0 +1,89 @@
+<%- include('../partials/header'); %>
+    <% if(locals.selectedI18n==='en' ) {%>
+        <div class="page-content-wrapper sp-y">
+
+            <% } else {%>
+                <div class="page-content-wrapper sp-y" style="direction: rtl;">
+
+                    <% } %>
+                        <div class="shop-page-action-bar mb-30">
+                            <div class="container container-wide">
+                                <div class="action-bar-inner">
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-6">
+                                            <div class="shop-layout-switcher mb-15 mb-sm-0">
+                                                <ul class="layout-switcher nav">
+                                                    <li data-layout="grid" class="active"><i class="fa fa-th"></i></li>
+                                                    <li data-layout="list"><i class="fa fa-th-list"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="shop-page-product">
+                            <div class="container container-wide">
+                                <div class="product-wrapper product-layout layout-grid">
+                                    <div class="row mtn-30">
+                                        <!-- Start Product Item -->
+                                        <% carBeautifings.forEach(function(product) { %>
+                                            <div class="col-sm-6 col-lg-4 col-xl-3">
+                                                <div class="product-item">
+                                                    <div class="product-item__thumb">
+                                                        <a href="/singleCarBeautifing?id=<%= product._id %>&categoreyId=<%= product.categories %>">
+                                                            <img class="thumb-primary" src="/<%= product.image[0] %>"
+                                                                alt="Product" />
+                                                            <!--  <img class="thumb-secondary" src="/<%= product.subImage1 %>"
+                                                                alt="Product" / -->
+                                                        </a>
+                                                    </div>
+                                                    <% if(locals.selectedI18n==='en' ) {%>
+                                                        <div class="product-item__content">
+
+                                                            <% } else {%>
+                                                                <div class="product-item__content" style="text-align:right">
+
+                                                                    <% } %>
+
+                                                                        <div class="product-item__info">
+                                                                            <h4 class="title" lang="ar" dir="rtl">
+                                                                                <a href="/singleCarBeautifing?id=<%= product._id %>&categoreyId=<%= product.categories %>">
+                                                                                    <% if(locals.selectedI18n==='ku') {%>
+                                                                                        <%= product.productName %>
+                                                                                            <% } else if(locals.selectedI18n==='ar'){%>
+                                                                                                <%= product.productNameArabic %>
+                                                                                                    <% } else {%>
+                                                                                                        <%= product.productNameEnglish %>
+                                                                                                            <% } %>
+                                                                                </a>
+
+                                                                            </h4>
+                                                                        </div>
+
+                                                                        <div class="product-item__desc">
+                                                                            <p>
+                                                                                <% if(locals.selectedI18n==='ku') {%>
+                                                                                    <%= product.description %>
+                                                                                        <% } else if(locals.selectedI18n==='ar'){%>
+                                                                                            <%= product.descriptionArabic %>
+                                                                                                <% } else {%>
+                                                                                                    <%= product.descriptionEnglish %>
+                                                                                                        <% } %>
+                                                                            </p>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <% }); %>
+                                                    <!-- End Product Item -->
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <%- include('./pagination'); %>
+                        </div>
+                        <!--== End Page Content Wrapper ==-->
+                        <%- include('../partials/footer'); %>

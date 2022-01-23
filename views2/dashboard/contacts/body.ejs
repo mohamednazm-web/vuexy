@@ -1,0 +1,92 @@
+<div class="wrapper">
+    <!-- Navbar Start -->
+    <%- include('../partials/header'); %>
+        <%- include('../partials/Language.ejs'); %>
+
+            <!-- Main Container Start -->
+            <main class="main--container">
+                <!-- Main Content Start -->
+                <section class="main--content">
+                    <div class="panel">
+                        <!-- <div class="panel-heading">
+                        <h3 class="panel-title">Search Results</h3>
+                    </div> -->
+
+                        <div class="panel-content">
+                            <!-- Search Box Start -->
+                            <div class="search--box">
+                                <!-- <form action="#">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Type to search..." required>
+
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-rounded btn-info"><i
+                                                class="fa fa-search mr-1"></i> Search</button>
+                                    </div>
+                                </div>
+                            </form> -->
+
+                                <ul class="options">
+                                    <li class="active"><a href="#">
+                                            <%= i18n.__("Message")%>
+                                        </a></li>
+                                    <!-- <li><a href="#">Users</a></li> -->
+                                    <!-- <li><a href="#">Messages</a></li> -->
+                                </ul>
+                            </div>
+                            <!-- Search Box End -->
+
+                            <!-- Search Results Start -->
+                            <div class="search--results">
+                                <p class="stats">
+                                    <%= totalNumItems %>
+                                        <%= i18n.__("Results Found")%>
+
+
+                                </p>
+
+                                <ul class="results list-unstyled">
+                                    <% contacts.forEach(function(contact) { %>
+                                        <li>
+                                            <a href="#">
+                                                <div class="h4 title">
+                                                    <%= contact.name %>
+                                                </div>
+                                                <div class="link">
+                                                    <%= i18n.__("subject")%>
+                                                        : <%= contact.subject %>
+                                                </div>
+                                                <div class="link">
+                                                    <%= i18n.__("phone")%>
+                                                        : <%= contact.phone %> </span>
+                                                            <div class="link">
+                                                                <%= i18n.__("Email")%>
+                                                                    : <%= contact.email %>
+                                                            </div>
+                                                            <div class="desc">
+                                                                <%= i18n.__("Message")%>
+                                                                    : <%= contact.message %>.
+                                                            </div>
+                                            </a>
+                                        </li>
+                                        <% }); %>
+                                </ul>
+
+                                <%- include('../../partials/pagination'); %>
+                            </div>
+                            <!-- Search Results End -->
+                        </div>
+                    </div>
+                </section>
+                <!-- Main Content End -->
+
+                <!-- Main Footer Start -->
+                <footer class="main--footer main--footer-light">
+                    <p>
+                        <%= i18n.__("Copyright Hersh car company©2021")%>.
+                    </p>
+                </footer>
+                <!-- Main Footer End -->
+            </main>
+            <!-- Main Container End -->
+</div>

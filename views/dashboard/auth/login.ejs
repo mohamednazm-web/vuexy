@@ -1,0 +1,185 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login-page.css">
+    <script defer src="login-page.js"></script>
+</head>
+
+<body>
+    <main id="main-holder">
+        <h1 id="login-header">Login</h1>
+
+        <% if(emailNotFound.length > 0){ %>
+            <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                <%= emailNotFound %>
+            </div>
+            <% } else if(joiError.length > 0){ %>
+                <div class="alert">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <%= joiError %>
+                </div>
+                <% } else if(invalidPassword.length > 0){ %>
+                    <div class="alert">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <%= invalidPassword %>
+                    </div>
+                    <% } %>
+
+
+                        <form id="login-form" action="/api/v1/auth/login" enctype="multipart/form-data" method="post">
+                            <input type="text" name="email" id="username-field" class="login-form-field" placeholder="Email">
+                            <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+                            <input type="submit" value="Login" id="login-form-submit">
+                        </form>
+
+    </main>
+</body>
+
+</html>
+
+<style>
+    @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
+    html {
+        height: 100%;
+    }
+    
+    body {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        background-color: #3a3a3a;
+    }
+    
+    .info-msg,
+    .success-msg,
+    .warning-msg,
+    .error-msg {
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 3px 3px 3px 3px;
+    }
+    
+    .info-msg {
+        color: #059;
+        background-color: #BEF;
+    }
+    
+    .success-msg {
+        color: #270;
+        background-color: #DFF2BF;
+    }
+    
+    .warning-msg {
+        color: #9F6000;
+        background-color: #FEEFB3;
+    }
+    
+    .error-msg {
+        color: #D8000C;
+        background-color: #FFBABA;
+    }
+    
+    .alert {
+        padding: 10px;
+        background-color: #f44336;
+        color: white;
+    }
+    
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    .closebtn:hover {
+        color: black;
+    }
+    
+    #main-holder {
+        width: 50%;
+        height: 70%;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        background-color: white;
+        border-radius: 7px;
+        box-shadow: 0px 0px 5px 2px black;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        #main-holder {
+            width: 75%;
+        }
+    }
+    
+    #login-error-msg-holder {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+    
+    #login-error-msg {
+        width: 23%;
+        text-align: center;
+        margin: 0;
+        padding: 5px;
+        font-size: 10px;
+        font-weight: bold;
+        color: #8a0000;
+        border: 1px solid #8a0000;
+        background-color: #e58f8f;
+        opacity: 0;
+    }
+    
+    #error-msg-second-line {
+        display: block;
+    }
+    
+    #login-form {
+        align-self: flex-start;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+    
+    .login-form-field::placeholder {
+        color: #3a3a3a;
+    }
+    
+    .login-form-field {
+        border: none;
+        border-bottom: 1px solid #3a3a3a;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        outline: none;
+        padding: 0px 0px 5px 5px;
+    }
+    
+    #login-form-submit {
+        width: 100%;
+        padding: 7px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        background-color: #3a3a3a;
+        cursor: pointer;
+        outline: none;
+    }
+</style>

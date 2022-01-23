@@ -1,0 +1,57 @@
+<div class="wrapper">
+    <!-- Navbar Start -->
+    <%- include('../partials/header'); %>
+        <%- include('../partials/Language.ejs'); %>
+            <!-- Navbar End -->
+            <!-- Main Container Start -->
+            <main class="main--container">
+                <!-- Main Content Start -->
+                <section class="main--content con">
+                    <!-- Records List Start -->
+                    <div class="records--list">
+                        <table id="recordsListView">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <H3 class="font-change">
+                                            <%= i18n.__("MANAGE IMAGES")%>
+                                        </H3>
+                                        <p class="font-change">
+                                            <%= i18n.__("First image size must be (1039 x 337)")%>
+                                        </p>
+                                        <p class="font-change">
+                                            <%= i18n.__("Second image size must be (710 x 335)")%>
+                                        </p>
+                                        <p class="font-change">
+                                            <%= i18n.__("Third image size must be (710 x 335)")%>
+                                        </p>
+
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% banners.forEach(function(product) { %>
+                                    <tr>
+                                        <td>
+                                            <img class="img-fluid" src="/<%= product.image %>" alt="" />
+                                        </td>
+                                        <td>
+                                            <div class="Editand">
+                                                <span><a href="/admin_dashboard/updateBannerImageBottom/<%=product._id%>"
+                                                        class="edit"><i class="material-icons"
+                                                            title="Edit">&#xE254;</i></a></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Records List End -->
+                </section>
+                <!-- Main Content End -->
+            </main>
+            <!-- Main Container End -->
+</div>

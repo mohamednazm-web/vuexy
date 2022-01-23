@@ -1,0 +1,75 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<form class="form-horizontal" action="/admin_dashboard/update-vedio/<%=product[0]._id%>" method="post" enctype="multipart/form-data" style="padding: 9rem;" id="cpa-form">
+
+    <fieldset>
+        <!-- Form Name -->
+        <% if (errorMessage) { %>
+            <div class="user-message user-message--error">
+                <%= errorMessage %>
+            </div>
+            <% } %>
+                <legend>
+                    <%= i18n.__("UPDATE PRODUCTS VEDIOS")%>
+                </legend>
+                <a href="/admin_dashboard">
+                    <%= i18n.__("got admin dashboard")%>
+                </a>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="title">
+                        <%= i18n.__("title")%>
+                    </label>
+                    <div class="col-md-4">
+                        <input id="title" name="title" placeholder="PRODUCT title" class="form-control input-md" type="text" value="<%= product[0].title%>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="titleArabic">
+                <%= i18n.__("titleArabic")%>
+            </label>
+                    <div class="col-md-4">
+                        <input id="titleArabic" name="titleArabic" placeholder="PRODUCT title Arabic" class="form-control input-md" type="text" value="<%= product[0].titleArabic%>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="titleEnglish">
+                <%= i18n.__("titleEnglish")%>
+            </label>
+                    <div class="col-md-4">
+                        <input id="titleEnglish" name="titleEnglish" placeholder="PRODUCT title English" class="form-control input-md" type="text" value="<%= product[0].titleEnglish%>">
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="vedio">
+                        <%= i18n.__("videourl")%>
+                    </label>
+                    <div class="col-md-4">
+                        <input id="vedio" name="vedio" placeholder="PRODUCT VEDIO" class="form-control input-md" type="text" value="<%= product[0].vedio%>">
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <!-- File Button -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="vedioImage">
+                            <%= i18n.__("improduct")%>
+                        </label>
+                        <div class="col-md-4">
+                            <input id="vedioImage" name="vedioImage" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file">
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="singlebutton"></label>
+                        <div class="col-md-4">
+                            <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary">
+                                <%= i18n.__("submit")%>
+                            </button>
+                        </div>
+                    </div>
+    </fieldset>
+</form>

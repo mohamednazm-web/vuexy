@@ -1,0 +1,290 @@
+<div class="wrapper">
+    <%- include('../index_include/selectLanguage.ejs'); %>
+
+        <!-- Navbar Start -->
+        <header class="navbar navbar-fixed">
+            <!-- Navbar Header Start -->
+            <div class="navbar--header">
+
+                <!-- Logo Start -->
+                <a href="https://www.facebook.com/kakonsoft/" target="_blank" style="text-align: center;" class="logo">
+                    <h4 class="font-change">کەکۆن سۆفت</h4>
+
+                </a>
+
+                <!-- Logo End -->
+
+                <!-- Sidebar Toggle Button Start -->
+                <a href="#" class="navbar--btn" data-toggle="sidebar" title="Toggle Sidebar">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <!-- Sidebar Toggle Button End -->
+            </div>
+            <!-- Navbar Header End -->
+
+            <!-- Sidebar Toggle Button Start -->
+            <a href="#" class="navbar--btn" data-toggle="sidebar" title="Toggle Sidebar">
+                <i class="fa fa-bars"></i>
+            </a>
+            <!-- Sidebar Toggle Button End -->
+
+            <!-- Navbar Search Start -->
+            <!--   <div class="navbar--search">
+            <form action="search-results.html">
+                <input type="search" name="search" class="form-control" placeholder="Search Something..." required>
+                <button class="btn-link"><i class="fa fa-search"></i></button>
+            </form>
+        </div> -->
+            <!-- Navbar Search End -->
+
+            <div class="navbar--nav ml-auto">
+                <ul class="nav">
+                    <!-- <li class="nav-item">
+                        <a href="search-results.html" class="nav-link">
+                            <i class="fa fa-envelope"></i>
+                            <span class="badge text-white bg-blue">4</span>
+                        </a>
+                    </li> -->
+
+                    <!-- Nav Language Start -->
+                    <li class="nav-item dropdown nav-language"></li>
+                    <!--   <a href="#" class="nav-link" data-toggle="dropdown">
+                            <img src="/assets2/img/flags/800px-Flag_of_Kurdistan 1.svg" alt="">
+                            <span>kurdish</span>
+                            <i class="fa fa-angle-down"></i>
+                        </a> -->
+
+                    <!--  <ul class="dropdown-menu">
+        
+                    </li>
+                    <!-- Nav Language End -->
+
+                    <!-- Nav User Start -->
+                    <li class="nav-item dropdown nav--user ">
+                        <a href="/admin_dashboard" class="nav-link">
+                            <img src="/assets2/img/avatars/IMG-20210712-WA0002.jpg" style="border-radius: 50%;" alt="">
+                            <!-- <span>hersh car</span> -->
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown nav--user">
+                        <form name="form1" method="get" action="/api/v1/auth/logout" class="nav-link">
+                            <label class="logoutLblPos">
+                                <input name="submit2" type="submit" id="submit2" value="دەرچوون" style="font-size:13px">
+                                </label>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- Navbar End -->
+        <!-- Sidebar Start -->
+        <aside class="sidebar" data-trigger="scrollbar">
+            <!-- Sidebar Profile Start -->
+            <div class="sidebar--profile">
+
+                <div class="sidebar--nav">
+                    <ul>
+                        <li>
+                            <ul>
+                                <li class="active">
+                                    <a href="/admin_dashboard">
+                                        <i class="fa fa-home"></i>
+                                        <span>
+                                            <%= i18n.__("Dashboard")%>
+                                        </span>
+                                    </a>
+                                    <br>
+                                    <li>
+                                        <a href="/admin_dashboard/products">
+                                            <%= i18n.__("Products")%>
+                                        </a>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <a href="/admin_dashboard/add-product">
+                                            <%= i18n.__("Add Products")%>
+                                        </a>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <a href="/admin_dashboard/contacts">
+                                            <%= i18n.__("contact1")%>
+
+
+                                        </a>
+                                    </li>
+
+                                    <li class="active open">
+                                        <a href="#">
+                                            <i class="fa fa-shopping-cart"></i>
+                                            <span>
+                                            <%= i18n.__("IMAGE UPDATE")%>
+                                        </span>
+                                        </a>
+                                        <ul>
+                                            <li>
+                                                <a href="/admin_dashboard/updateBannerImage">
+                                                    <%= i18n.__("Image Banner Update")%>
+
+                                                </a>
+                                            </li>
+                                            <br>
+                                            <li>
+                                                <a href="/admin_dashboard/imageBannerUpdateDown">
+                                                    <%= i18n.__("Image Banner Down Update")%>
+
+
+                                                </a>
+                                            </li>
+                                            <br>
+                                            <li>
+                                                <a href="/admin_dashboard/vedios">
+                                                    <%= i18n.__("Manage Vedios")%>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+        </aside>
+        <!-- Sidebar End -->
+
+        <!-- Main Container Start -->
+        <main class="main--container">
+            <!-- Main Content Start -->
+            <section class="main--content">
+                <div class="row gutter-20">
+                    <div class="col-md-4">
+                        <div class="panel">
+                            <!-- Mini Stats Panel Start -->
+                            <div class="miniStats--panel">
+                                <div class="miniStats--header bg-darker">
+                                    <p class="miniStats--label text-white bg-blue">
+                                        <i class="fa fa-level-up-alt"></i>
+                                        <!-- <span>10%</span> -->
+                                    </p>
+                                </div>
+
+                                <div class="miniStats--body">
+                                    <i class="miniStats--icon fa fa-car text-blue"></i>
+
+                                    <!-- <p class="miniStats--caption text-blue">Monthly</p> -->
+                                    <h3 class="miniStats--title h4">
+                                        <%= i18n.__("Total Number of products")%>
+
+
+                                    </h3>
+                                    <p class="miniStats--num text-blue">
+                                        <%= totalNumOfProducts %>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Mini Stats Panel End -->
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="panel">
+                            <!-- Mini Stats Panel Start -->
+                            <div class="miniStats--panel">
+                                <div class="miniStats--header bg-darker">
+                                    <p class="miniStats--label text-white bg-orange">
+                                        <i class="fa fa-level-up-alt"></i>
+                                        <!-- <span>10%</span> -->
+                                    </p>
+                                </div>
+
+                                <div class="miniStats--body">
+                                    <i class="miniStats--icon fa fa-ticket-alt text-orange"></i>
+                                    <!-- <p class="miniStats--caption text-orange">Monthly</p> -->
+                                    <h3 class="miniStats--title h4">
+                                        <%= i18n.__("Home page visiters")%>
+
+                                    </h3>
+                                    <p class="miniStats--num text-orange">
+                                        <%= finalResViews %>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Mini Stats Panel End -->
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="panel">
+                            <div class="miniStats--panel">
+                                <div class="miniStats--header bg-darker">
+                                    <p class="miniStats--label text-white bg-green">
+                                        <i class="fa fa-level-up-alt"></i>
+                                    </p>
+                                </div>
+
+                                <div class="miniStats--body">
+                                    <i class="miniStats--icon fa fa-car text-green"></i>
+
+                                    <!-- <p class="miniStats--caption text-green">Monthly</p> -->
+                                    <h3 class="miniStats--title h4">
+                                        <%= i18n.__("TOTAL NUMBER OF CAR SALES")%>
+
+                                    </h3>
+                                    <p class="miniStats--num text-green">
+                                        <%= totalNumCarSales %>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="panel">
+                            <div class="miniStats--panel">
+                                <div class="miniStats--header bg-darker">
+                                    <p class="miniStats--label text-white bg-green">
+                                        <i class="fa fa-level-up-alt"></i>
+                                    </p>
+                                </div>
+
+                                <div class="miniStats--body">
+                                    <i class="miniStats--icon fa fa-car text-green"></i>
+
+                                    <!-- <p class="miniStats--caption text-green">Monthly</p> -->
+                                    <h3 class="miniStats--title h4">
+                                        <%= i18n.__("TOTAL NUMBER OF CAR BEAUTIFING")%>
+
+                                    </h3>
+                                    <p class="miniStats--num text-green">
+                                        <%= totalNumCarBeautifing %>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="panel">
+                            <div class="miniStats--panel">
+                                <div class="miniStats--header bg-darker">
+                                    <p class="miniStats--label text-green bg-white">
+                                        <i class="fa fa-level-up-alt"></i>
+                                    </p>
+                                </div>
+                                <div class="miniStats--body">
+                                    <i class="miniStats--icon fa fa-industry text-green"></i>
+
+                                    <!-- <p class="miniStats--caption text-green">Monthly</p> -->
+                                    <h3 class="miniStats--title h4">
+                                        <%= i18n.__("TOTAL NUMBER OF CAR SUPPLIERS")%>
+                                    </h3>
+                                    <p class="miniStats--num text-green">
+                                        <%= totalNumSuppliers %>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Scripts -->
+                    <!-- Page Level Scripts -->

@@ -1,0 +1,424 @@
+<%- include('../partials/header'); %>
+
+    <!--== Start Page Content Wrapper ==-->
+    <div class="page-content-wrapper sp-y">
+        <div class="product-details-page-content">
+            <div class="container container-wide">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <!-- Start Product Thumbnail Area -->
+                            <div class="col-md-5">
+                                <div class="product-thumb-area">
+                                    <div class="product-details-thumbnail">
+                                        <div class="product-thumbnail-slider" id="thumb-gallery">
+                                            <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].image[0] %>">
+                                                <img src="/<%= product[0].image[0] %>" alt="Product Details" />
+                                            </figure>
+                                            <% if(product[0].subImage1 !=null){%>
+                                                <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage1 %>">
+                                                    <img src="/<%= product[0].subImage1 %>" alt="Product Details" />
+                                                </figure>
+                                                <% } %>
+                                                    <% if(product[0].subImage2 !=null){%>
+                                                        <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage2 %>">
+                                                            <img src="/<%= product[0].subImage2 %>" alt="Product Details" />
+                                                        </figure>
+                                                        <% } %>
+                                                            <% if(product[0].subImage3 !=null){%>
+                                                                <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage3 %>">
+                                                                    <img src="/<%= product[0].subImage3 %>" alt="Product Details" />
+                                                                </figure>
+                                                                <% } %>
+                                                                    <% if(product[0].subImage4 !=null){%>
+                                                                        <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage4 %>">
+                                                                            <img src="/<%= product[0].subImage4 %>" alt="Product Details" />
+                                                                        </figure>
+                                                                        <% } %>
+                                                                            <% if(product[0].subImage5
+                                                                                !=null){%>
+                                                                                <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage5 %>">
+                                                                                    <img src="/<%= product[0].subImage5 %>" alt="Product Details" />
+
+                                                                                </figure>
+                                                                                <% } %>
+                                                                                    <% if(product[0].subImage6
+                                                                                        !=null){%>
+                                                                                        <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage6 %>">
+                                                                                            <img src="/<%= product[0].subImage6 %>" alt="Product Details" />
+
+                                                                                        </figure>
+                                                                                        <% } %>
+                                                                                            <% if(
+                                                                                                product[0].subImage7
+                                                                                                !=null){%>
+                                                                                                <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage7 %>">
+                                                                                                    <img src="/<%= product[0].subImage7 %>" alt="Product Details" />
+                                                                                                </figure>
+                                                                                                <% } %>
+                                                                                                    <% if(
+                                                                                                        product[0].subImage8
+                                                                                                        !=null){%>
+                                                                                                        <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage8 %>">
+                                                                                                            <img src="/<%= product[0].subImage8 %>" alt="Product Details" />
+                                                                                                        </figure>
+                                                                                                        <% } %>
+                                                                                                            <% if(
+                                                                                                                product[0].subImage9
+                                                                                                                !=null){%>
+                                                                                                                <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage9 %>">
+                                                                                                                    <img src="/<%= product[0].subImage9 %>" alt="Product Details" />
+
+                                                                                                                </figure>
+                                                                                                                <% } %>
+                                                                                                                    <% if(
+                                                                                                                        product[0].subImage10
+                                                                                                                        !=null){%>
+                                                                                                                        <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage10 %>">
+
+                                                                                                                            <img src="/<%= product[0].subImage10 %>" alt="Product Details" />
+
+                                                                                                                        </figure>
+                                                                                                                        <% }
+                                                                                                                            %>
+                                                                                                                            <% if(
+                                                                                                                                product[0].subImage11
+                                                                                                                                !=null){%>
+                                                                                                                                <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage11 %>">
+
+                                                                                                                                    <img src="/<%= product[0].subImage11 %>" alt="Product Details" />
+
+                                                                                                                                </figure>
+                                                                                                                                <% }
+                                                                                                                                    %>
+                                                                                                                                    <% if(
+                                                                                                                                        product[0].subImage12
+                                                                                                                                        !=null){%>
+                                                                                                                                        <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage12 %>">
+
+                                                                                                                                            <img src="/<%= product[0].subImage12 %>" alt="Product Details" />
+
+                                                                                                                                        </figure>
+                                                                                                                                        <% }
+                                                                                                                                            %>
+                                                                                                                                            <% if(
+                                                                                                                                                product[0].subImage13
+                                                                                                                                                !=null){%>
+                                                                                                                                                <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage13 %>">
+
+                                                                                                                                                    <img src="/<%= product[0].subImage13 %>" alt="Product Details" />
+
+                                                                                                                                                </figure>
+                                                                                                                                                <% }
+                                                                                                                                                    %>
+                                                                                                                                                    <% if(
+                                                                                                                                                        product[0].subImage14
+                                                                                                                                                        !=null){%>
+                                                                                                                                                        <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage14 %>">
+
+                                                                                                                                                            <img src="/<%= product[0].subImage14 %>" alt="Product Details" />
+
+                                                                                                                                                        </figure>
+                                                                                                                                                        <% }
+                                                                                                                                                            %>
+                                                                                                                                                            <% if(
+                                                                                                                                                                product[0].subImage15
+                                                                                                                                                                !=null){%>
+                                                                                                                                                                <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage15 %>">
+
+                                                                                                                                                                    <img src="/<%= product[0].subImage15 %>" alt="Product Details" />
+
+                                                                                                                                                                </figure>
+                                                                                                                                                                <% }
+                                                                                                                                                                    %>
+                                                                                                                                                                    <% if(
+                                                                                                                                                                        product[0].subImage16
+                                                                                                                                                                        !=null){%>
+                                                                                                                                                                        <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage16 %>">
+                                                                                                                                                                            <img src="/<%= product[0].subImage16 %>" alt="Product Details" />
+                                                                                                                                                                        </figure>
+                                                                                                                                                                        <% }
+                                                                                                                                                                            %>
+                                                                                                                                                                            <% if(
+                                                                                                                                                                                product[0].subImage17
+                                                                                                                                                                                !=null){%>
+                                                                                                                                                                                <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage17 %>">
+                                                                                                                                                                                    <img src="/<%= product[0].subImage17 %>" alt="Product Details" />
+                                                                                                                                                                                </figure>
+                                                                                                                                                                                <% }
+                                                                                                                                                                                    %>
+                                                                                                                                                                                    <% if(
+                                                                                                                                                                                        product[0].subImage18
+                                                                                                                                                                                        !=null){%>
+                                                                                                                                                                                        <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage18 %>">
+                                                                                                                                                                                            <img src="/<%= product[0].subImage18 %>" alt="Product Details" />
+                                                                                                                                                                                        </figure>
+                                                                                                                                                                                        <% }
+                                                                                                                                                                                            %>
+                                                                                                                                                                                            <% if(
+                                                                                                                                                                                                product[0].subImage19
+                                                                                                                                                                                                !=null){%>
+                                                                                                                                                                                                <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage19 %>">
+                                                                                                                                                                                                    <img src="/<%= product[0].subImage19 %>" alt="Product Details" />
+                                                                                                                                                                                                </figure>
+                                                                                                                                                                                                <% }
+                                                                                                                                                                                                    %>
+                                                                                                                                                                                                    <% if(product[0].subImage20
+                                                                                                                                                                                                        !=null){%>
+                                                                                                                                                                                                        <figure class="pro-thumb-item" data-mfp-src="/<%= product[0].subImage20 %>">
+                                                                                                                                                                                                            <img src="/<%= product[0].subImage20 %>" alt="Product Details" />
+                                                                                                                                                                                                        </figure>
+                                                                                                                                                                                                        <% }
+                                                                                                                                                                                                            %>
+                                        </div>
+                                        <a href="#thumb-gallery" class="btn-large-view btn-gallery-popup">
+                                            <%= i18n.__("View Larger")%>
+                                                <i class="fa fa-search-plus"></i>
+                                        </a>
+                                    </div>
+
+                                    <div class="product-details-thumbnail-nav">
+                                        <% if(product[0].subImage1 !=null){%>
+                                            <figure class="pro-thumb-item">
+                                                <img src="/<%= product[0].subImage1 %>" alt="Product Details" />
+                                            </figure>
+                                            <% } %>
+                                                <% if(product[0].subImage2 !=null){%>
+                                                    <figure class="pro-thumb-item">
+                                                        <img src="/<%= product[0].subImage2 %>" alt="Product Details" />
+                                                    </figure>
+                                                    <% } %>
+                                                        <% if(product[0].subImage3 !=null){%>
+                                                            <figure class="pro-thumb-item">
+                                                                <img src="/<%= product[0].subImage3 %>" alt="Product Details" />
+                                                            </figure>
+                                                            <% } %>
+                                                                <% if(product[0].subImage4 !=null){%>
+                                                                    <figure class="pro-thumb-item">
+                                                                        <img src="/<%= product[0].subImage4 %>" alt="Product Details" />
+                                                                    </figure>
+                                                                    <% } %>
+                                                                        <% if(product[0].subImage5 !=null){%>
+                                                                            <figure class="pro-thumb-item">
+                                                                                <img src="/<%= product[0].subImage5 %>" alt="Product Details" />
+
+                                                                            </figure>
+                                                                            <% } %>
+                                                                                <% if(product[0].subImage6
+                                                                                    !=null){%>
+                                                                                    <figure class="pro-thumb-item">
+                                                                                        <img src="/<%= product[0].subImage6 %>" alt="Product Details" />
+
+                                                                                    </figure>
+                                                                                    <% } %>
+                                                                                        <% if(
+                                                                                            product[0].subImage7
+                                                                                            !=null){%>
+                                                                                            <figure class="pro-thumb-item">
+                                                                                                <img src="/<%= product[0].subImage7 %>" alt="Product Details" />
+                                                                                            </figure>
+                                                                                            <% } %>
+                                                                                                <% if(
+                                                                                                    product[0].subImage8
+                                                                                                    !=null){%>
+                                                                                                    <figure class="pro-thumb-item">
+                                                                                                        <img src="/<%= product[0].subImage8 %>" alt="Product Details" />
+                                                                                                    </figure>
+                                                                                                    <% } %>
+                                                                                                        <% if(
+                                                                                                            product[0].subImage9
+                                                                                                            !=null){%>
+                                                                                                            <figure class="pro-thumb-item">
+                                                                                                                <img src="/<%= product[0].subImage9 %>" alt="Product Details" />
+
+                                                                                                            </figure>
+                                                                                                            <% } %>
+                                                                                                                <% if(
+                                                                                                                    product[0].subImage10
+                                                                                                                    !=null){%>
+                                                                                                                    <figure class="pro-thumb-item">
+
+                                                                                                                        <img src="/<%= product[0].subImage10 %>" alt="Product Details" />
+
+                                                                                                                    </figure>
+                                                                                                                    <% }
+                                                                                                                        %>
+                                                                                                                        <% if(
+                                                                                                                            product[0].subImage11
+                                                                                                                            !=null){%>
+                                                                                                                            <figure class="pro-thumb-item">
+
+                                                                                                                                <img src="/<%= product[0].subImage11 %>" alt="Product Details" />
+
+                                                                                                                            </figure>
+                                                                                                                            <% }
+                                                                                                                                %>
+                                                                                                                                <% if(
+                                                                                                                                    product[0].subImage12
+                                                                                                                                    !=null){%>
+                                                                                                                                    <figure class="pro-thumb-item">
+
+                                                                                                                                        <img src="/<%= product[0].subImage12 %>" alt="Product Details" />
+
+                                                                                                                                    </figure>
+                                                                                                                                    <% }
+                                                                                                                                        %>
+                                                                                                                                        <% if(
+                                                                                                                                            product[0].subImage13
+                                                                                                                                            !=null){%>
+                                                                                                                                            <figure class="pro-thumb-item">
+
+                                                                                                                                                <img src="/<%= product[0].subImage13 %>" alt="Product Details" />
+
+                                                                                                                                            </figure>
+                                                                                                                                            <% }
+                                                                                                                                                %>
+                                                                                                                                                <% if(
+                                                                                                                                                    product[0].subImage14
+                                                                                                                                                    !=null){%>
+                                                                                                                                                    <figure class="pro-thumb-item">
+
+                                                                                                                                                        <img src="/<%= product[0].subImage14 %>" alt="Product Details" />
+
+                                                                                                                                                    </figure>
+                                                                                                                                                    <% }
+                                                                                                                                                        %>
+                                                                                                                                                        <% if(
+                                                                                                                                                            product[0].subImage15
+                                                                                                                                                            !=null){%>
+                                                                                                                                                            <figure class="pro-thumb-item">
+
+                                                                                                                                                                <img src="/<%= product[0].subImage15 %>" alt="Product Details" />
+
+                                                                                                                                                            </figure>
+                                                                                                                                                            <% }
+                                                                                                                                                                %>
+                                                                                                                                                                <% if(
+                                                                                                                                                                    product[0].subImage16
+                                                                                                                                                                    !=null){%>
+                                                                                                                                                                    <figure class="pro-thumb-item">
+                                                                                                                                                                        <img src="/<%= product[0].subImage16 %>" alt="Product Details" />
+                                                                                                                                                                    </figure>
+                                                                                                                                                                    <% }
+                                                                                                                                                                        %>
+                                                                                                                                                                        <% if(
+                                                                                                                                                                            product[0].subImage17
+                                                                                                                                                                            !=null){%>
+                                                                                                                                                                            <figure class="pro-thumb-item">
+                                                                                                                                                                                <img src="/<%= product[0].subImage17 %>" alt="Product Details" />
+                                                                                                                                                                            </figure>
+                                                                                                                                                                            <% }
+                                                                                                                                                                                %>
+                                                                                                                                                                                <% if(
+                                                                                                                                                                                    product[0].subImage18
+                                                                                                                                                                                    !=null){%>
+                                                                                                                                                                                    <figure class="pro-thumb-item">
+                                                                                                                                                                                        <img src="/<%= product[0].subImage18 %>" alt="Product Details" />
+                                                                                                                                                                                    </figure>
+                                                                                                                                                                                    <% }
+                                                                                                                                                                                        %>
+                                                                                                                                                                                        <% if(
+                                                                                                                                                                                            product[0].subImage19
+                                                                                                                                                                                            !=null){%>
+                                                                                                                                                                                            <figure class="pro-thumb-item">
+                                                                                                                                                                                                <img src="/<%= product[0].subImage19 %>" alt="Product Details" />
+                                                                                                                                                                                            </figure>
+                                                                                                                                                                                            <% }
+                                                                                                                                                                                                %>
+                                                                                                                                                                                                <% if(product[0].subImage20
+                                                                                                                                                                                                    !=null){%>
+                                                                                                                                                                                                    <figure class="pro-thumb-item">
+                                                                                                                                                                                                        <img src="/<%= product[0].subImage20 %>" alt="Product Details" />
+                                                                                                                                                                                                    </figure>
+                                                                                                                                                                                                    <% }
+                                                                                                                                                                                                        %>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Product Thumbnail Area -->
+
+                            <!-- Start Product Info Area -->
+                            <div class="col-md-7" style="text-align: right;">
+                                <div class="product-details-info-content-wrap">
+                                    <div class="prod-details-info-content">
+                                        <% if(locals.selectedI18n==='ku') {%>
+                                            <h5 class="font-change">
+                                                <%= product[0].productName %>
+                                            </h5>
+                                            <% } else if(locals.selectedI18n==='ar'){%>
+                                                <h5 class="font-change">
+                                                    <%= product[0].productNameArabic %>
+                                                </h5>
+                                                <% } else {%>
+                                                    <h5 class="font-change">
+                                                        <%= product[0].productNameEnglish %>
+                                                    </h5>
+                                                    <% } %>
+                                                        <% if(locals.selectedI18n==='en' || locals.selectedI18n==='ku') {%>
+                                                            <span style="display: flex;margin-top: 5px; font-size:1.1rem; flex-direction: row-reverse;">
+                                            <i class="fa fa-clock-o" aria-hidden="true" style="margin-left: 8px;"></i>  <%= moment(product[0].createdAt).fromNow() %> <span class="font-change">
+                                                     </span></span>
+                                                            <% } else {%>
+                                                                <span style="display: flex;margin-top: 5px; font-size:1.1rem; flex-direction: row-reverse;">
+                                            <i class="fa fa-clock-o" aria-hidden="true" style="margin-left: 8px;"></i>  <%= moment(product[0].createdAt).lang('ar').fromNow() %> <span class="font-change">
+                                                     </span></span>
+                                                                <% } %>
+                                                                    <div>
+                                                                        <% if(locals.selectedI18n==='en' ) {%>
+                                                                            <span style="display: flex;margin-top: 5px; font-size:1.1rem; flex-direction: row-reverse;">
+                                                            : <%= moment(product[0].createdAt).format('DD/MM/YYYY') %> <span class="font-change">  <%= i18n.__("createdAt")%>
+                                                            <i class="fa fa-calendar" aria-hidden="true"></i> </span></span>
+                                                                            <% } else {%>
+                                                                                <span style="margin: 5px; font-size:1.1rem">
+                                                            <%= moment(product[0].createdAt).format('DD/MM/YYYY') %><strong> : <%= i18n.__("createdAt")%>
+                                                        </span><i class="fa fa-calendar" aria-hidden="true"></strong></i>
+                                                                                <% } %>
+                                                                    </div>
+                                                                    <div>
+                                                                        <span style="margin: 5px; font-size:1.1rem">
+                                                        <%= product[0].hasViewd %>
+                                                     </span><i class="fa fa-eye" aria-hidden="true"></i>
+                                                                    </div>
+                                                                    <br>
+                                                                    <% if(product[0].price) {%>
+                                                                        <% if(locals.selectedI18n==='en' ) {%>
+                                                                            <span class="price-amount font-change" style="display: flex; flex-direction: row-reverse;">
+                                                                : $<%= product[0].price %> <span> <%= i18n.__("Price") %>
+                                                                </span>
+                                                                            </span>
+                                                                            <% } else {%>
+                                                                                <span class="price-amount font-change">
+                                                                                $<%= product[0].price %> <strong> : <%= i18n.__("Price") %>
+                                                                                    </strong>
+                                                                            </span>
+                                                                                <% } %>
+                                                                                    <% } %>
+                                                                                        <br>
+                                                                                        <pre class="pretag">
+                                                                                            <strong class="font-change" style="font-size:13px;">
+                                                                                                <% if(locals.selectedI18n==='ku') {%>
+                                                                                                    <%= product[0].description %>
+                                                                                                <% } else if(locals.selectedI18n==='ar'){%>
+                                                                                                    <%= product[0].descriptionArabic %>
+                                                                                                        <% } else {%>
+                                                                                                            <%= product[0].descriptionEnglish %>
+                                                                                                            <% } %>
+                                                                                            </strong>
+                                                                                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Product Info Area -->
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--== End Page Content Wrapper ==-->
+
+    <%- include('../partials/footer'); %>

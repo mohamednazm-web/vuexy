@@ -1,0 +1,118 @@
+<header class="navbar navbar-fixed">
+    <!-- Navbar Header Start -->
+    <div class="navbar--header">
+        <!-- Logo Start -->
+        <a href="/admin_dashboard" class="logo">
+            <img src="/assets2/img/logo.png" alt="">
+        </a>
+        <!-- Logo End -->
+
+
+        <!-- Sidebar Toggle Button Start -->
+        <a href="#" class="navbar--btn" data-toggle="sidebar" title="Toggle Sidebar">
+            <i class="fa fa-bars"></i>
+        </a>
+        <!-- Sidebar Toggle Button End -->
+    </div>
+    <!-- Navbar Header End -->
+
+    <!-- Sidebar Toggle Button Start -->
+    <a href="#" class="navbar--btn" data-toggle="sidebar" title="Toggle Sidebar">
+        <i class="fa fa-bars"></i>
+    </a>
+
+    <!-- Sidebar Toggle Button End -->
+    <div class="navbar--nav ml-auto">
+        <ul class="nav">
+            <!-- <li class="nav-item">
+                <a href="search-results.html" class="nav-link">
+                    <i class="fa fa-envelope"></i>
+                    <span class="badge text-white bg-blue">4</span>
+                </a>
+            </li> -->
+
+            <!-- Nav Language Start -->
+            <li class="nav-item dropdown nav-language"></li>
+            <!--   <a href="#" class="nav-link" data-toggle="dropdown">
+                    <img src="/assets2/img/flags/800px-Flag_of_Kurdistan 1.svg" alt="">
+                    <span>kurdish</span>
+                    <i class="fa fa-angle-down"></i>
+                </a> -->
+
+            <!--  <ul class="dropdown-menu">
+
+            </li>
+            <!-- Nav Language End -->
+
+            <!-- Nav User Start -->
+            <li class="nav-item dropdown nav--user ">
+                <a href="/admin_dashboard" class="nav-link">
+                    <img src="/assets2/img/avatars/IMG-20210712-WA0002.jpg" style="border-radius: 50%;" alt="">
+                    <!-- <span>hersh car</span> -->
+                </a>
+            </li>
+
+            <li class="nav-item dropdown nav--user">
+                <form name="form1" method="get" action="/api/v1/auth/logout" class="nav-link">
+                    <label class="logoutLblPos">
+                        <input name="submit2" type="submit" id="submit2" value="دەرچوون" style="font-size:13px">
+                        </label>
+                </form>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<!-- Sidebar Start -->
+<aside class="sidebar" data-trigger="scrollbar">
+    <!-- Sidebar Profile Start -->
+    <div class="sidebar--profile">
+        <!-- Sidebar Navigation Start -->
+        <div class="sidebar--nav">
+            <ul>
+                <li>
+                    <ul>
+                        <li>
+                            <a href="/admin_dashboard">
+                                <i class="fa fa-home"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <!-- <br>
+                        <li>
+                            <a href="/admin_dashboard/products">
+                                <%= i18n.__("Products")%>
+                            </a>
+                        </li> -->
+                        <li class="active"><a href="/admin_dashboard/oneWay">One way</a></li>
+                        <br>
+                        <li>
+                            <a href="/admin_dashboard/return">
+                                Return
+                            </a>
+                        </li>
+                        <!-- <br>
+                        <li><a href="/admin_dashboard/add-product">Add Products</a></li> -->
+                        <br>
+                        <li><a href="/admin_dashboard/contacts">contact</a></li>
+
+
+                        <!-- <li class="active open">
+                            <a href="#">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span>IMAGE UPDATES</span>
+                            </a>
+                            <ul>
+                                <li><a href="/admin_dashboard/updateBannerImage">Image Banner Update</a></li>
+                                <br>
+                                <li><a href="/admin_dashboard/imageBannerUpdateDown">Image Banner Down Update</a></li>
+                                <br>
+                                <li><a href="/admin_dashboard/vedios">Manage vedios</a></li>
+                            </ul>
+                        </li> -->
+                </li>
+                </ul>
+        </div>
+        <!-- Sidebar Navigation End -->
+</aside>
+<!-- Sidebar End -->

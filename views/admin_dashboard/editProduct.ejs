@@ -1,0 +1,261 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<form class="form-horizontal" action="/admin_dashboard/update/<%=product[0]._id%>" method="post" enctype="multipart/form-data" style="padding: 9rem;">
+
+    <fieldset>
+        <!-- Form Name -->
+        <legend>
+            <%= i18n.__("updatepro")%>
+        </legend>
+        <a href="/admin_dashboard">
+            <%= i18n.__("got admin dashboard")%>
+        </a>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="product_name">
+                <%= i18n.__("Product Name")%>
+            </label>
+            <div class="col-md-4">
+                <input id="product_name" name="productName" placeholder="PRODUCT NAME" class="form-control input-md" type="text" value="<%= product[0].productName %>">
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="available_quantity">
+                <%= i18n.__("Price")%>
+            </label>
+            <div class="col-md-4">
+                <input id="available_quantity" name="price" placeholder="AVAILABLE QUANTITY" class="form-control input-md" type="number" value="<%= product[0].price%>">
+            </div>
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="color">
+                <%= i18n.__("color")%>
+            </label>
+            <div class="col-md-4">
+                <input id="color" name="price" placeholder="color" class="form-control input-md" type="text" value="<%= product[0].color%>">
+            </div>
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="product_description">
+                <%= i18n.__("PRODUCT DESCRIPTION")%>
+            </label>
+            <div class="col-md-4">
+                <textarea class="form-control" id="product_description" name="description"><%= product[0].description%></textarea>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="product_weight">
+                <%= i18n.__("Brand Name")%>
+            </label>
+            <div class="col-md-4">
+                <input id="product_weight" name="brandName" placeholder="PRODUCT BRAND" class="form-control input-md" type="text" value="<%= product[0].brandName%>">
+            </div>
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="online_date">
+                <%= i18n.__("CREATE DATE AND TIME")%>
+            </label>
+            <div class="col-md-4">
+                <input type="datetime-local" id="online_date" name="time" placeholder="ONLINE DATE" class="form-control input-md" type="text" value="<%= product[0].time%>">
+            </div>
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="image">
+                    <%= i18n.__("PRODUCT IMAGE(263 * 292)")%>
+                </label>
+                <div class="col-md-4">
+                    <input id="image" name="image" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%=product[0].image[0]%>">
+                </div>
+            </div>
+            <hr>
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage1">SUB IMAGE 1</label>
+                <div class="col-md-4">
+                    <input id="subImage1" name="subImage1" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage1[0]%>">
+                </div>
+                <!--<a href="/admin_dashboard/delete-sub-image1/<%=product[0]._id%>">delete</a>-->
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage2">SUB IMAGE 2</label>
+                <div class="col-md-4">
+                    <input id="subImage2" name="subImage2" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage2[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage3">SUB IMAGE 3</label>
+                <div class="col-md-4">
+                    <input id="subImage3" name="subImage3" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage3[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage4">SUB IMAGE 4</label>
+                <div class="col-md-4">
+                    <input id="subImage4" name="subImage4" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage4[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage4">SUB IMAGE 4</label>
+                <div class="col-md-4">
+                    <input id="subImage4" name="subImage4" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage4[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage5">SUB IMAGE 5</label>
+                <div class="col-md-5">
+                    <input id="subImage5" name="subImage5" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage5[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage6">SUB IMAGE 6</label>
+                <div class="col-md-4">
+                    <input id="subImage6" name="subImage6" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage6[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage7">SUB IMAGE 7</label>
+                <div class="col-md-7">
+                    <input id="subImage7" name="subImage7" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage7[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage8">SUB IMAGE 8</label>
+                <div class="col-md-4">
+                    <input id="subImage8" name="subImage8" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage8[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage9">SUB IMAGE 9</label>
+                <div class="col-md-9">
+                    <input id="subImage9" name="subImage9" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage9[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage10">SUB IMAGE 10</label>
+                <div class="col-md-4">
+                    <input id="subImage10" name="subImage10" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage10[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage11">SUB IMAGE 11</label>
+                <div class="col-md-4">
+                    <input id="subImage11" name="subImage11" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage11[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage12">SUB IMAGE 12</label>
+                <div class="col-md-4">
+                    <input id="subImage12" name="subImage12" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage12[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage13">SUB IMAGE 13</label>
+                <div class="col-md-4">
+                    <input id="subImage13" name="subImage13" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage13[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage14">SUB IMAGE 14</label>
+                <div class="col-md-4">
+                    <input id="subImage14" name="subImage14" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage14[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage15">SUB IMAGE 15</label>
+                <div class="col-md-4">
+                    <input id="subImage15" name="subImage15" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage15[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage16">SUB IMAGE 16</label>
+                <div class="col-md-4">
+                    <input id="subImage16" name="subImage16" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage16[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage17">SUB IMAGE 17</label>
+                <div class="col-md-4">
+                    <input id="subImage17" name="subImage17" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage17[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage18">SUB IMAGE 18</label>
+                <div class="col-md-4">
+                    <input id="subImage18" name="subImage18" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage18[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage19">SUB IMAGE 19</label>
+                <div class="col-md-4">
+                    <input id="subImage19" name="subImage19" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage19[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="subImage20">SUB IMAGE 20</label>
+                <div class="col-md-4">
+                    <input id="subImage20" name="subImage20" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file" value="./<%= product[0].subImage20[0]%>">
+                </div>
+            </div>
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="singlebutton"></label>
+                <div class="col-md-4">
+                    <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary">
+                        <%= i18n.__("SAVE CHANGES")%>
+                    </button>
+                </div>
+            </div>
+    </fieldset>
+</form>

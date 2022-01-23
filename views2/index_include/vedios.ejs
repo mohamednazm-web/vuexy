@@ -1,0 +1,46 @@
+<div class="best-seller-products-area sm-top">
+    <div class="container container-wide">
+        <div class="row">
+            <div class="col-lg-5 m-auto text-center">
+                <div class="section-title">
+                    <h2 class="font-change">
+                        <%= i18n.__("VIDEOS")%>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="container container-wide">
+            <div class="row mtn-30 image-gallery">
+                <% videos.forEach(function(product) { %>
+                    <div class="col-sm-6 col-lg-3 ">
+                        <div class="about-thumb video-play">
+                            <img src="/<%= product.image %>" alt="About" />
+                            <a href="<%= product.vedio %>" class="btn-video-popup"><i
+                                    class="ion-play"></i></a>
+                            <h4 lang="ar" dir="rtl" style="text-align: center;">
+                                <a class="vedio_title" href="/singleVideo?id=<%= product._id %>&amp;categoreyId=60e21f9a5e082a12c8dc13ea">
+                                    <% if(locals.selectedI18n==='ku') {%>
+                                        <%= product.title %>
+                                            <% } else if(locals.selectedI18n==='ar'){%>
+                                                <%= product.titleArabic %>
+                                                    <% } else {%>
+                                                        <%= product.titleEnglish %>
+                                                            <% } %>
+                                </a>
+                            </h4>
+                        </div>
+                    </div>
+                    <% }); %>
+            </div>
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-12 text-center"><strong><a style="color:rgb(241, 21, 0); font-size: large;"
+                        class="font change" href="/vedios">
+                        <%= i18n.__("see more")%>
+                    </a></strong></div>
+
+    </div>
+
+</div>
+</div>

@@ -1,0 +1,365 @@
+<div class="wrapper">
+    <!-- Navbar Start -->
+    <%- include('../partials/header'); %>
+
+
+        <%- include('../partials/Language.ejs'); %>
+            <!-- Navbar End -->
+            <!-- Main Container Start -->
+            <main class="main--container">
+                <!-- Page Header End -->
+
+                <!-- Main Content Start -->
+                <section class="main--content p-3">
+                    <div class="panel">
+                        <div class="panel-content">
+                            <!-- Form Wizard Start -->
+                            <form action="/admin_dashboard" enctype="multipart/form-data" method="post" id="formWizard" class="form--wizard">
+                                <% if (messageSuccessAdd.length > 0) { %>
+                                    <div class="alert alert-success" style="font-size: 2rem; text-align: center;">
+                                        <%= messageSuccessAdd %>
+                                    </div>
+                                    <% } %>
+                                        <h3 style="text-align: center;  color:black; background-color: rgb(6, 110, 140);" class="p-2">
+                                            <%= i18n.__("Add Product")%>
+                                        </h3>
+                                        <section class="pt-5">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">
+                                                        <%= i18n.__("Product Name")%>
+                                                    </span>
+                                                    <input type="text" name="productName"
+                                                        placeholder=  <%=i18n.__("Name")%>
+                                                    class="form-control" required>
+                                                </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">
+                                                        <%= i18n.__("Product Name English")%>
+                                                    </span>
+                                                    <input type="text" name="productNameEnglish"
+                                                        placeholder=<%=i18n.__("Name")%>
+                                                    class="form-control" required>
+                                                </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">
+                                                        <%= i18n.__("Product Name Arabic")%>
+                                                    </span>
+                                                    <input type="text" name="productNameArabic"
+                                                        placeholder=<%=i18n.__("Name")%>
+                                                    class="form-control" required>
+                                                </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">
+                                                        <%= i18n.__("Category")%>
+                                                    </span>
+                                                    <select name="categories" class="form-control" required>
+                                                        <option value="">
+                                                            <%= i18n.__("choose a category")%>
+                                                        </option>
+                                                        <% categories.forEach(function(category) { %>
+                                                            <option value="<%= category._id %>">
+                                                                <%= category.name %>
+                                                            </option>
+                                                            <% }); %>
+                                                    </select>
+                                                    </select>
+                                                </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">
+                                                        <%= i18n.__("Price")%>
+                                                    </span>
+                                                    <input type="Number" name="price" placeholder=<%=i18n.__("Price")%>
+                                                    class="form-control">
+                                                </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 pt-4">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">
+                                                        <%= i18n.__("CREATE DATE AND TIME")%>
+                                                    </span>
+                                                    <input type="datetime-local" id="online_date" name="time"
+                                                        class="form-control input-md" type="text">
+                                                </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 pt-4">
+                                                    <div class=" form-group">
+                                                        <label>
+                                                    <span class="label-text">
+                                                        <%= i18n.__("PRODUCT IMAGE 266px * 172px")%>
+                                                    </span>
+                                                    <input id="image" name="image" class="form-control input-md"
+                                                        type="file" required>
+                                                </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 pt-4 ">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">
+                                                        <%= i18n.__("PRODUCT DESCRIPTION")%>
+                                                    </span>
+                                                    <textarea placeholder=<%=i18n.__("PRODUCT DESCRIPTION")%> cols="30" rows="3"
+                                                    class="form-control1" name="description"></textarea>
+                                                </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 pt-4 ">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">
+                                                        <%= i18n.__("PRODUCT DESCRIPTION ARABIC")%>
+                                                    </span>
+                                                    <textarea placeholder=<%=i18n.__("PRODUCT DESCRIPTION ARABIC")%> cols="30" rows="3"
+                                                    class="form-control1" name="descriptionArabic"></textarea>
+                                                </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 pt-4 ">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">
+                                                        <%= i18n.__("PRODUCT DESCRIPTION ENGLISH")%>
+                                                    </span>
+                                                    <textarea placeholder=<%=i18n.__("PRODUCT DESCRIPTION ENGLISH")%> cols="30" rows="3"
+                                                    class="form-control1" name="descriptionEnglish"></textarea>
+                                                </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="P-3">
+                                            <h3>138px * 92px</h3>
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">1</span>
+                                                    <input id=" subImage1" name="subImage1" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">2</span>
+                                                    <input id="subImage2" name="subImage2" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">3</span>
+                                                    <input id="subImage3" name="subImage3" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">4</span>
+                                                    <input id="subImag41" name="subImage4" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <span class="label-text">5</span>
+                                                        <input id="subImage5" name="subImage5" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">6</span>
+                                                    <input id="subImage6" name="subImage6" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="P-3">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">7</span>
+                                                    <input id="subImage1" name="subImage7" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">8</span>
+                                                    <input id="subImage2" name="subImage8" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">9</span>
+                                                    <input id="subImage9" name="subImage9" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">10</span>
+                                                    <input id="subImag10" name="subImage10" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <span class="label-text">11</span>
+                                                        <input id="subImage11" name="subImage11" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">12</span>
+                                                    <input id="subImage12" name="subImage12" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="P-3">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">13</span>
+                                                    <input id="subImage13" name="subImage13" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">14</span>
+                                                    <input id="subImage14" name="subImage14" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">15</span>
+                                                    <input id="subImage15" name="subImage15" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">16</span>
+                                                    <input id="subImag16" name="subImage16" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <span class="label-text">17</span>
+                                                        <input id="subImage17" name="subImage17" placeholder="IMAGE UPLOAD" class="form-control input-md" type="file">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">18</span>
+                                                    <input id="subImage18" name="subImage18" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="P-3">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text">19</span>
+                                                    <input id="subImage19" name="subImage19" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>
+                                                    <span class="label-text" style="text-align: center;">20</span>
+                                                    <input id="subImage20" name="subImage20" placeholder="IMAGE UPLOAD"
+                                                        class="form-control input-md" type="file">
+                                                </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <div class="col-md-12 pt-4">
+                                            <div class="form-group" style="text-align: center;">
+                                                <label>
+                                            <span class="label-text"></span>
+                                            <button type="submit" class="btn btn-success" style="border-radius:5px;">
+                                                <%= i18n.__("ADD YOUR PRODUCT")%>
+                                            </button>
+                                        </label>
+                                            </div>
+                                        </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Main Content End -->
+            </main>
+            <!-- Main Container End -->
+</div>

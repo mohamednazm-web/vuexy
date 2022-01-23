@@ -1,0 +1,43 @@
+<%- include('../partials/header'); %>
+    <!--== Start Page Content Wrapper ==-->
+
+    <div class="page-content-wrapper sp-y">
+        <% if(locals.selectedI18n==='en' ) {%>
+            <div class="gallery-page-content">
+                <% } else {%>
+                    <div class="gallery-page-content" style="direction: rtl;">
+
+                        <% } %>
+                            <div class="container container-wide">
+                                <div class="row mtn-30 image-gallery">
+                                    <% vedios.forEach(function(product) { %>
+                                        <div class="col-sm-6 col-lg-3 ">
+                                            <div class="about-thumb video-play">
+                                                <img src="/<%= product.image %>" alt="About" />
+                                                <a href="<%= product.vedio %>" class="btn-video-popup"><i
+                                                        class="ion-play"></i></a>
+                                                <h4 lang="ar" dir="rtl" style="text-align: center;">
+                                                    <a class="vedio_title" href="/singleVideo?id=<%= product._id %>&amp;categoreyId=60e21f9a5e082a12c8dc13ea">
+                                                        <% if(locals.selectedI18n==='ku') {%>
+                                                            <%= product.title %>
+                                                                <% } else if(locals.selectedI18n==='ar'){%>
+                                                                    <%= product.titleArabic %>
+                                                                        <% } else {%>
+                                                                            <%= product.titleEnglish %>
+                                                                                <% } %>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <% }); %>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+            <%- include('./pagination'); %>
+
+                <!--== End Page Content Wrapper ==-->
+
+                <%- include('../partials/footer'); %>
+                    <!-- Scroll Top Button -->
+                    <button class="btn-scroll-top"><i class="ion-chevron-up"></i></button>

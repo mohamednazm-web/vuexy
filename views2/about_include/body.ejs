@@ -1,0 +1,136 @@
+<%- include('../partials/header'); %>
+    <div class="page-header-wrap bg-img pb-4" data-bg="assets/img/bg/banner.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="page-header-content">
+                        <div class="page-header-content-inner">
+                            <!--  <h1>About</h1>
+                            <ul class="breadcrumb">
+                                <li><a href="/">Home</a></li>
+                                <li class="current"><a href="#">About</a></li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--== End Page Header Area ==-->
+
+
+    <div class="page-content-wrapper sm-top">
+
+        <div class="about-page-content">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-1 order-md-0">
+                        <!--== Start Page Content Wrapper ==-->
+                        <% if(locals.selectedI18n==='en' ) {%>
+                            <div class="about-content">
+
+
+                                <% } else {%>
+                                    <div class="about-content" style="text-align: right;">
+
+                                        <% } %>
+                                            <h2 class="h3 mb-sm-20" >
+                                                <%= i18n.__("about")%>
+                                            </h2>
+                                            <p class="aligning">
+                                                <%= i18n.__("Aboutpage")%>
+                                            </p>
+
+
+                                    </div>
+                            </div>
+
+                            <div class="col-lg-6 order-0">
+                                <div class="about-thumb mb-sm-30">
+                                    <img src="assets/img/bg/men.jpg" alt="About" />
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="row align-items-center sm-top">
+                        <div class="col-lg-6">
+                            <div class="about-thumb video-play mb-sm-30">
+                                <img src="assets/img/bg/car.jpg" alt="About" />
+                                <a href="https://www.youtube.com/watch?v=FxBE_NBUKm0" class="btn-video-popup"><i
+                                        class="ion-play"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <!--== Start Page Content Wrapper ==-->
+                            <% if(locals.selectedI18n==='en' ) {%>
+                                <div class="about-content">
+
+
+                                    <% } else {%>
+                                        <div class="about-content" style="text-align: right;">
+
+
+                                            <% } %>
+                                                <h2 class="h3">
+                                                    <%= i18n.__("our mission")%>
+                                                </h2>
+                                                <p class="aligning">
+                                                    <%= i18n.__("mission")%>
+                                                </p>
+
+                                        </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--== End Page Content Wrapper ==-->
+
+            <!--== Start Brand Logo Area Wrapper ==-->
+            <div class="brand-logo-area sm-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="brand-logo-content">
+                                <div class="brand-logo-item mt-3">
+                                    <a href="#"><img width="150px" height="80px" src="assets/img/brand-logo/image 5.svg"
+                                            alt="Logo" /></a>
+                                </div>
+
+                                <div class="brand-logo-item mt-3">
+                                    <a href="#"><img width="135px" height="80px" src="assets/img/brand-logo/image 3.svg"
+                                            alt="Logo" /></a>
+                                </div>
+                                <div class="brand-logo-item ">
+                                    <a href="#"><img width="100px" height="120px"
+                                            src="assets/img/brand-logo/image 1.svg" alt="Logo" /></a>
+                                </div>
+                                <div class="brand-logo-item">
+                                    <a href="#"><img width="120px" height="120px"
+                                            src="assets/img/brand-logo/image 2.svg" alt="Logo" /></a>
+                                </div>
+
+                                <div class="brand-logo-item">
+                                    <a href="#"><img width="150px" height="110px"
+                                            src="assets/img/brand-logo/image 4.svg" alt="Logo" /></a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--== End Brand Logo Area Wrapper ==-->
+
+            <!--== Start Need Help area ==-->
+
+            <!--== End Need Help area ==-->
+
+            <!--== Start Footer Area Wrapper ==-->
+            <%- include('../partials/footer'); %>
+                <!--== End Footer Area Wrapper ==-->
+
+                <!-- Scroll Top Button -->
+                <button class="btn-scroll-top"><i class="ion-chevron-up"></i></button>

@@ -1,0 +1,21 @@
+{
+    "products":{
+       " product-name":"Product Name",
+        "catgery":"category",
+        "Add-product":"Add product",
+        "product-list":"Product List",
+        "kurdish":"kurdish",
+        "Arabic":"Arabic",
+        "Edit":"Edit",
+        "Delete":"Delete",
+        "Next":"Next",
+        "previous":"previous"
+    },
+    "AddProducts":{
+     "Add-product":"Add Products"
+
+
+
+    }
+    
+}

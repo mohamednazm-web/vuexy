@@ -1,0 +1,113 @@
+<%- include('../index_include/selectLanguage'); %>
+    <% if(locals.selectedI18n==='en' ) {%>
+        <header class="header-area">
+
+            <% } else {%>
+                <header class="header-area" style="direction: rtl;">
+
+                    <style>
+                        .mobile-menu.res-mobile-menu {
+                            text-align: end;
+                        }
+                        /* .mobile-menu .slicknav_nav li a:hover {
+                            text-align: start;
+                        } */
+                        
+                        .mobile-menu .slicknav_nav li {
+                            text-align: right;
+                        }
+                        
+                        .mobile-menu .slicknav_nav li a .slicknav_arrow {
+                            right: 80%;
+                        }
+                    </style>
+                    <% } %>
+                        <div class="container container-wide">
+                            <div class="row1 align-items-center1">
+                                <div class="col-xs-4 col-sm-6 col-md-5 col-lg-2">
+                                    <div class="site-logo text-center text-sm-left">
+                                        <a href="/"><img src="assets/img/IMG-20210712-WA0002.jpg" alt="Logo" /></a>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-7 d-none d-lg-block">
+                                    <div class="site-navigation">
+                                        <ul class="main-menu nav">
+                                            <li class="has-submenu">
+                                                <a href="/">
+                                                    <%= i18n.__("home")%>
+                                                </a>
+                                            </li>
+                                            <li class="has-submenu">
+                                                <a href="/carBeautifing">
+                                                    <%= i18n.__("CAR BEATUIFYING")%>
+                                                </a>
+                                            </li>
+                                            <li class="has-submenu">
+                                                <a href="/carSales">
+                                                    <%= i18n.__("CAR SALES")%>
+                                                </a>
+                                            </li>
+                                            <li class="has-submenu">
+                                                <a href="/ourSuppliers">
+                                                    <%= i18n.__("OUR SUPPLIERS")%>
+
+                                                </a>
+                                            </li>
+                                            <li class="has-submenu">
+                                                <a href="#">
+                                                    <%= i18n.__("OUR WORKS")%>
+
+                                                </a>
+                                                <ul class="sub-menu">
+                                                    <li>
+                                                        <a href="/pictures">
+                                                            <%= i18n.__("picture")%>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/vedios">
+                                                            <%= i18n.__("videoH")%>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="has-submenu">
+                                                <a href="/about">
+                                                    <%= i18n.__("about")%>
+                                                </a>
+                                            </li>
+                                            <li class="has-submenu">
+                                                <a href="/contact">
+                                                    <%= i18n.__("contact")%>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8 col-lg-3">
+                                    <div class="site-action d-flex justify-content-center justify-content-sm-end align-items-center">
+                                        <form action="/search" method="get" class="box">
+                                            <div class="search-box">
+                                                <input type="text" name="dsearch" placeholder=<%=i18n.__( "Search" )%> >
+                                                <div></div>
+                                                <div class="icon">
+                                                    <button type="submit" href="#" style="color: rgb(6, 110, 140);">
+                                                        <i class="fa fa-search"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="responsive-menu d-lg-none">
+                                    <button class="btn-menu">
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                </header>

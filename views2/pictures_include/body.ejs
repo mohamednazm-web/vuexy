@@ -1,0 +1,54 @@
+<!-- <% if(locals.selectedI18n==='en' ) {%>
+    <div class="page-content-wrapper sm-top">
+       
+            <div class="page-content-wrapper sm-top" style="direction: rtl;">
+                <style>
+                    .org {
+                        text-align: right;
+                    }
+                </style>
+                <% } %> -->
+<%- include('../partials/header'); %>
+    <!--== Start Page Content Wrapper ==-->
+    <div class="page-content-wrapper sp-y">
+        <% if(locals.selectedI18n==='en' ) {%>
+            <div class="gallery-page-content">
+                <% } else {%>
+                    <div class="gallery-page-content" style="direction: rtl;">
+
+                        <% } %>
+                            <div class="container container-wide">
+                                <div class="row mtn-30 image-gallery">
+                                    <% pictures.forEach(function(product) { %>
+                                        <div class="col-sm-6 col-lg-3">
+                                            <div class="gallery-item" data-mfp-src="/<%= product.image[0] %>">
+                                                <img src="/<%= product.image[0] %>" alt="gallery" />
+                                                <div class="gallery-item__text">
+                                                    <% if(locals.selectedI18n==='ku') {%>
+                                                        <h3 class="font-change">
+                                                            <%= product.productName %>
+                                                        </h3>
+                                                        <% } else if(locals.selectedI18n==='ar'){%>
+                                                            <h3 class="font-change">
+                                                                <%= product.productNameArabic %>
+                                                            </h3>
+                                                            <% } else {%>
+                                                                <h3 class="font-change">
+                                                                    <%= product.productNameEnglish %>
+                                                                </h3>
+                                                                <% } %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% }); %>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+            <%- include('./pagination'); %>
+
+                <!--== End Page Content Wrapper ==-->
+
+                <%- include('../partials/footer'); %>
+                    <!-- Scroll Top Button -->
+                    <button class="btn-scroll-top"><i class="ion-chevron-up"></i></button>
