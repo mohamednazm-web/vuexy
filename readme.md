@@ -1,3 +1,3 @@
-# sartak company Application
+# vuexy Application
 
 Built using modern technologies: node.js, express, mongoDB, mongoose and friends
